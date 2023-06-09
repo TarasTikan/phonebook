@@ -1,37 +1,56 @@
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-export const WrapAuth = styled.div`
+import { NavLink } from 'react-router-dom';
+export const MobileMenu = styled.div`
+  position: fixed;
+  /* display: none; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: #ffffff;
-  width: 289px;
-  height: 900px;
-  padding-top: 32px;
-  padding-left: 24px;
-  display: none;
+  z-index: 1;
+`;
+
+export const MobileContainer = styled.div`
+  display: flex;
   flex-direction: column;
-  padding-bottom: 24px;
-  @media screen and (min-width: 1200px) {
-    display: flex;
+  justify-content: space-between;
+  height: 100%;
+  padding: 24px 26px 20px;
+`;
+
+export const ContentWrapper = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const WrapIcon = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+`;
+
+export const HeroTitle = styled.h1`
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #3e85f3;
+  text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
+    0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 24px;
   }
 `;
-export const BtnMenu = styled.button`
-  border: none;
+
+export const ButtonClose = styled.button`
   background-color: transparent;
-  margin-bottom: auto;
+  border: none;
+  display: block;
+  margin-left: auto;
   cursor: pointer;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  @media screen and (min-width: 1200px) {
-    display: none;
-  }
-  svg {
-    width: 24px;
-    height: 24px;
-  }
-  @media screen and (min-width: 768px) {
-    svg {
-      width: 34px;
-      height: 34px;
-    }
-  }
 `;
 
 export const TitleUser = styled.p`
@@ -46,25 +65,19 @@ export const TitleUser = styled.p`
   }
 `;
 
-export const NavList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  list-style: none;
-  padding-left: 0;
-  margin-top: 10px;
-`;
-
 export const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   margin-bottom: auto;
 `;
 
-export const WrapIcon = styled.div`
+export const NavList = styled.ul`
   display: flex;
-  align-items: center;
-  gap: 6px;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+  gap: 10px;
 `;
 
 export const LinkWrapper = styled.div`
@@ -79,12 +92,14 @@ export const LinkWrapper = styled.div`
   border-radius: 8px;
   gap: 5px;
   background-color: ${({ active }) => (active ? '#e3f3ff' : 'transparent')};
-  color: ${({ active }) => (active ? '#fff' : '#000')};
-  stroke: ${({ active }) => (active ? '#3e85f3' : '#34343480')};
+
+  color: ${({ active }) => (active ? '#3e85f3' : 'rgba(52, 52, 52, 0.5)')};
+
+  stroke: ${({ active }) => (active ? '#3e85f3' : 'rgba(52, 52, 52, 0.5)')};
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
-    background-color: '#e3f3ff';
-    color: '#3e85f3';
+    background-color: #e3f3ff;
+    color: #3e85f3;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   svg {
@@ -96,7 +111,7 @@ export const LinkWrapper = styled.div`
     line-height: 19px;
     padding-left: 22px;
     padding-top: 18px;
-    padding-bottom: 18px;
+    padding-bottom: 24px;
     padding-right: 96px;
   }
 `;
@@ -109,12 +124,20 @@ export const StyledLink = styled(NavLink)`
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: ${({ active }) => (active ? '#3e85f3' : 'rgba(52, 52, 52, 0.5)')};
   &:hover {
-    color: '#3e85f3';
+    color: #3e85f3;
   }
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 19px;
   }
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: flex-end;
+  margin-top: auto;
+  margin-top: 20px;
+  margin-bottom: 44px; /* Add this line */
 `;
 
 export const BtnLogout = styled.button`
@@ -150,23 +173,3 @@ export const BtnLogout = styled.button`
     line-height: 24px;
   }
 `;
-
-export const HeroTitle = styled.h1`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  color: #3e85f3;
-  text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
-    0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);
-  @media screen and (min-width: 768px) {
-    font-size: 18px;
-    line-height: 24px;
-  }
-`;
-
-export const NavWrappText = styled.div`
-  margin-bottom: auto;
-`;
-
-// ПАНТЕНСИН ДАРНИЦЯ
-// МЕФЕТОМИНКА

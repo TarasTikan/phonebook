@@ -1,51 +1,40 @@
-// import { useSelector } from 'react-redux';
-// import { selectIsLoggein } from 'redux/auth/selectors';
 import { UserIcon } from 'images/icons/UserIcon';
 import {
-  WrapAuth,
   BtnLogout,
-  TitleUser,
-  NavList,
-  Nav,
-  WrapIcon,
+  ButtonClose,
+  ButtonWrapper,
+  ContentWrapper,
   HeroTitle,
-  StyledLink,
   LinkWrapper,
-  BtnMenu,
-
-} from './Navigation.styled';
-// import { NavLink } from 'react-router-dom';
-import { Calendar } from 'images/icons/Calendar';
-import { useState } from 'react';
+  MobileContainer,
+  MobileMenu,
+  Nav,
+  NavList,
+  StyledLink,
+  TitleUser,
+  WrapIcon,
+} from './MobileMenu.styled';
 import { LogoutIcon } from 'images/icons/LogoutIcon';
-import goose1pxDesck from 'images/imagesGoose/goose1pxDescktop.png'
+import { Calendar } from 'images/icons/Calendar';
+import { IconClose } from 'images/icons/Close';
+import goose1pxDesck from 'images/imagesGoose/goose1pxDescktop.png';
 import goose2pxDesck from 'images/imagesGoose/goose2pxDescktop.png';
 import goose1pxTable from 'images/imagesGoose/goose1pxTable.png';
 import goose2pxTable from 'images/imagesGoose/goose2pxTable.png';
 import goose1pxMobile from 'images/imagesGoose/goose1pxMobile.png';
 import goose2pxMobile from 'images/imagesGoose/goose2pxMobile.png';
-import { OpenMenuIcon } from 'images/icons/OpenMenuIcon';
-import { MobileMenuAppl } from 'components/MobileMenu/MobileMenu';
-export const Navigation = () => {
-  const [isActiveMenu, setIsActiveMenu] = useState(false);
-   const [activeBlock, setActiveBlock] = useState(null);
+import { useState } from 'react';
+export const MobileMenuAppl = ({ toggleMenu }) => {
+  const [activeBlock, setActiveBlock] = useState(null);
 
-   const handleBlockClick = block => {
-     setActiveBlock(block);
-   };
-     const toggleMenu = () => {
-        setIsActiveMenu(!isActiveMenu);
-      }
+  const handleBlockClick = block => {
+    setActiveBlock(block);
+  };
   return (
-    <>
-      <BtnMenu onClick={toggleMenu}>
-        <OpenMenuIcon />
-      </BtnMenu>
-      {isActiveMenu && <MobileMenuAppl toggleMenu={toggleMenu} />}
-      <nav>
-        <WrapAuth>
+    <MobileMenu>
+      <MobileContainer>
+        <ContentWrapper>
           <WrapIcon>
-            {/* <img src={`${goose1pxDesck}`} alt="goose"></img> */}
             <picture>
               <source
                 srcSet={`${goose1pxDesck} 1x`}
@@ -74,6 +63,9 @@ export const Navigation = () => {
               <img src={goose1pxMobile} alt="Retina" width="71" height="68" />
             </picture>
             <HeroTitle>GooseTrack</HeroTitle>
+            <ButtonClose>
+              <IconClose onClick={toggleMenu} />
+            </ButtonClose>
           </WrapIcon>
           <TitleUser>User Panel</TitleUser>
           <Nav>
@@ -110,11 +102,13 @@ export const Navigation = () => {
               </li>
             </NavList>
           </Nav>
+        </ContentWrapper>
+        <ButtonWrapper>
           <BtnLogout>
             Log out <LogoutIcon />
           </BtnLogout>
-        </WrapAuth>
-      </nav>
-    </>
+        </ButtonWrapper>
+      </MobileContainer>
+    </MobileMenu>
   );
 };
