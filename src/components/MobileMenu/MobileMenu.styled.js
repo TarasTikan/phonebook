@@ -32,15 +32,18 @@ export const WrapIcon = styled.div`
 `;
 
 export const HeroTitle = styled.h1`
+  font-family: 'Coolvetica';
+  font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 22px;
+  line-height: calc(22 / 16);
+  margin: 0;
   color: #3e85f3;
   text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
     0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);
   @media screen and (min-width: 768px) {
     font-size: 18px;
-    line-height: 24px;
+    line-height: calc(24 / 18);
   }
 `;
 
@@ -49,8 +52,22 @@ export const ButtonClose = styled.button`
   border: none;
   display: block;
   margin-left: auto;
+
+  width: 24px;
+  height: 24px;
   cursor: pointer;
+  stroke: #343434;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  & {
+    stroke: #343434;
+  }
+  @media screen and (min-width: 768px) {
+    width: 33px;
+    height: 33px;
+  }
+  @media screen and (min-width: 1440px) {
+    display: none;
+  }
 `;
 
 export const TitleUser = styled.p`
@@ -80,7 +97,7 @@ export const NavList = styled.ul`
   gap: 10px;
 `;
 
-export const LinkWrapper = styled.div`
+export const LinkWrapper = styled.li`
   display: flex;
   align-items: center;
   padding-left: 10px;
@@ -103,10 +120,12 @@ export const LinkWrapper = styled.div`
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   svg {
-    width: 15px;
-    height: 16.67px;
+    width: 20px;
+    height: 20px;
   }
   @media screen and (min-width: 768px) {
+    width: 225px;
+    height: 56px;
     font-size: 16px;
     line-height: 19px;
     padding-left: 22px;
@@ -121,6 +140,8 @@ export const StyledLink = styled(NavLink)`
   font-size: 14px;
   line-height: 17px;
   text-decoration: none;
+  font-family: 'Inter';
+  font-style: normal;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: ${({ active }) => (active ? '#3e85f3' : 'rgba(52, 52, 52, 0.5)')};
   &:hover {
@@ -128,7 +149,8 @@ export const StyledLink = styled(NavLink)`
   }
   @media screen and (min-width: 768px) {
     font-size: 16px;
-    line-height: 19px;
+    line-height: calc(19 / 16);
+    /* gap: 10px; */
   }
 `;
 
@@ -141,24 +163,34 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const BtnLogout = styled.button`
+  width: 131px;
+  height: 46px;
+
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  padding: 14px 0px;
+
+  background: #3e85f3;
   box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
   border-radius: 16px;
-  width: 141px;
-  height: 56px;
-  background-color: #3e85f3;
   border: none;
+
+  font-family: 'Inter';
+  font-style: normal;
   font-weight: 600;
-  font-size: 14px;
-  line-height: 18px;
-  color: #ffff;
+
+  letter-spacing: -0.02em;
+  color: #ffffff;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
   stroke: '#fff';
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
-    background-color: '#000';
+    background: #2b78ef;
   }
   svg {
     margin-left: 13px;
@@ -168,8 +200,12 @@ export const BtnLogout = styled.button`
   svg:hover {
     stroke: '#0000';
   }
+
   @media screen and (min-width: 768px) {
+    width: 141px;
+    height: 56px;
     font-size: 18px;
     line-height: 24px;
+    padding: 16px 0px;
   }
 `;

@@ -70,21 +70,19 @@ export const MobileMenuAppl = ({ toggleMenu }) => {
           <TitleUser>User Panel</TitleUser>
           <Nav>
             <NavList>
-              <li>
-                <LinkWrapper
+              <LinkWrapper
                   active={activeBlock === 'block1' ? 'true' : undefined}
                   onClick={() => handleBlockClick('block1')}
                 >
                   <UserIcon />
                   <StyledLink
-                    to="/contacts"
+                    to="account"
                     active={activeBlock === 'block1' ? 'true' : undefined}
                     onClick={() => handleBlockClick('block1')}
                   >
                     My account
                   </StyledLink>
-                </LinkWrapper>
-              </li>
+              </LinkWrapper>
               <li>
                 <LinkWrapper
                   active={activeBlock === 'block2' ? 'true' : undefined}
@@ -92,7 +90,7 @@ export const MobileMenuAppl = ({ toggleMenu }) => {
                 >
                   <Calendar />
                   <StyledLink
-                    to="/"
+                    to="calendar"
                     active={activeBlock === 'block2' ? 'true' : undefined}
                     onClick={() => handleBlockClick('block2')}
                   >
