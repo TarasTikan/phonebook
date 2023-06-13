@@ -6,7 +6,7 @@ export const WrapAuth = styled.div`
   height: 900px;
   padding-top: 32px;
   padding-left: 24px;
-  display: none;
+  display: flex;
   flex-direction: column;
   padding-bottom: 24px;
   @media screen and (min-width: 1440px) {

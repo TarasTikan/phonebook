@@ -1,4 +1,4 @@
-import { UserIcon } from 'images/icons/UserIcon';
+// import { UserIcon } from 'images/icons/UserIcon';
 import {
   BtnLogout,
   ButtonClose,
@@ -14,15 +14,15 @@ import {
   TitleUser,
   WrapIcon,
 } from './MobileMenu.styled';
-import { LogoutIcon } from 'images/icons/LogoutIcon';
-import { Calendar } from 'images/icons/Calendar';
-import { IconClose } from 'images/icons/Close';
-import goose1pxDesck from 'images/imagesGoose/goose1pxDescktop.png';
-import goose2pxDesck from 'images/imagesGoose/goose2pxDescktop.png';
-import goose1pxTable from 'images/imagesGoose/goose1pxTable.png';
-import goose2pxTable from 'images/imagesGoose/goose2pxTable.png';
-import goose1pxMobile from 'images/imagesGoose/goose1pxMobile.png';
-import goose2pxMobile from 'images/imagesGoose/goose2pxMobile.png';
+// import { LogoutIcon } from 'images/icons/LogoutIcon';
+// import { Calendar } from 'images/icons/Calendar';
+// import { IconClose } from 'images/icons/Close';
+// import goose1pxDesck from 'images/imagesGoose/goose1pxDescktop.png';
+// import goose2pxDesck from 'images/imagesGoose/goose2pxDescktop.png';
+// import goose1pxTable from 'images/imagesGoose/goose1pxTable.png';
+// import goose2pxTable from 'images/imagesGoose/goose2pxTable.png';
+// import goose1pxMobile from 'images/imagesGoose/goose1pxMobile.png';
+// import goose2pxMobile from 'images/imagesGoose/goose2pxMobile.png';
 import { useState } from 'react';
 export const MobileMenuAppl = ({ toggleMenu }) => {
   const [activeBlock, setActiveBlock] = useState(null);
@@ -35,7 +35,7 @@ export const MobileMenuAppl = ({ toggleMenu }) => {
       <MobileContainer>
         <ContentWrapper>
           <WrapIcon>
-            <picture>
+            {/* <picture>
               <source
                 srcSet={`${goose1pxDesck} 1x`}
                 media="(min-width: 1440px)"
@@ -61,10 +61,10 @@ export const MobileMenuAppl = ({ toggleMenu }) => {
                 media="(max-width: 767px)"
               />
               <img src={goose1pxMobile} alt="Retina" width="71" height="68" />
-            </picture>
+            </picture> */}
             <HeroTitle>GooseTrack</HeroTitle>
             <ButtonClose>
-              <IconClose onClick={toggleMenu} />
+              {/* <IconClose onClick={toggleMenu} /> */}
             </ButtonClose>
           </WrapIcon>
           <TitleUser>User Panel</TitleUser>
@@ -74,7 +74,7 @@ export const MobileMenuAppl = ({ toggleMenu }) => {
                 active={activeBlock === 'block1' ? 'true' : undefined}
                 onClick={() => handleBlockClick('block1')}
               >
-                <UserIcon />
+                {/* <UserIcon /> */}
                 <StyledLink
                   to="account"
                   active={activeBlock === 'block1' ? 'true' : undefined}
@@ -87,7 +87,7 @@ export const MobileMenuAppl = ({ toggleMenu }) => {
                 active={activeBlock === 'block2' ? 'true' : undefined}
                 onClick={() => handleBlockClick('block2')}
               >
-                <Calendar />
+                {/* <Calendar /> */}
                 <StyledLink
                   to="calendar"
                   active={activeBlock === 'block2' ? 'true' : undefined}
@@ -101,7 +101,7 @@ export const MobileMenuAppl = ({ toggleMenu }) => {
         </ContentWrapper>
         <ButtonWrapper>
           <BtnLogout>
-            Log out <LogoutIcon />
+            Log out
           </BtnLogout>
         </ButtonWrapper>
       </MobileContainer>

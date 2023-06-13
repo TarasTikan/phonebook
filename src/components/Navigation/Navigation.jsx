@@ -1,6 +1,6 @@
 // import { useSelector } from 'react-redux';
 // import { selectIsLoggein } from 'redux/auth/selectors';
-import { UserIcon } from 'images/icons/UserIcon';
+// import { UserIcon } from 'images/icons/UserIcon';
 import {
   WrapAuth,
   BtnLogout,
@@ -15,16 +15,13 @@ import {
 
 } from './Navigation.styled';
 // import { NavLink } from 'react-router-dom';
-import { Calendar } from 'images/icons/Calendar';
 import { useState } from 'react';
-import { LogoutIcon } from 'images/icons/LogoutIcon';
-import goose1pxDesck from 'images/imagesGoose/goose1pxDescktop.png'
-import goose2pxDesck from 'images/imagesGoose/goose2pxDescktop.png';
-import goose1pxTable from 'images/imagesGoose/goose1pxTable.png';
-import goose2pxTable from 'images/imagesGoose/goose2pxTable.png';
-import goose1pxMobile from 'images/imagesGoose/goose1pxMobile.png';
-import goose2pxMobile from 'images/imagesGoose/goose2pxMobile.png';
-import { OpenMenuIcon } from 'images/icons/OpenMenuIcon';
+// import goose1pxDesck from 'images/imagesGoose/goose1pxDescktop.png'
+// import goose2pxDesck from 'images/imagesGoose/goose2pxDescktop.png';
+// import goose1pxTable from 'images/imagesGoose/goose1pxTable.png';
+// import goose2pxTable from 'images/imagesGoose/goose2pxTable.png';
+// import goose1pxMobile from 'images/imagesGoose/goose1pxMobile.png';
+// import goose2pxMobile from 'images/imagesGoose/goose2pxMobile.png';
 import { MobileMenuAppl } from 'components/MobileMenu/MobileMenu';
 export const Navigation = () => {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
@@ -39,14 +36,14 @@ export const Navigation = () => {
   return (
     <>
       <BtnMenu onClick={toggleMenu}>
-        <OpenMenuIcon />
+        {/* <OpenMenuIcon /> */}
       </BtnMenu>
       {isActiveMenu && <MobileMenuAppl toggleMenu={toggleMenu} />}
       <nav>
         <WrapAuth>
           <WrapIcon>
             {/* <img src={`${goose1pxDesck}`} alt="goose"></img> */}
-            <picture>
+            {/* <picture>
               <source
                 srcSet={`${goose1pxDesck} 1x`}
                 media="(min-width: 1440px)"
@@ -72,7 +69,7 @@ export const Navigation = () => {
                 media="(max-width: 767px)"
               />
               <img src={goose1pxMobile} alt="Retina" width="71" height="68" />
-            </picture>
+            </picture> */}
             <HeroTitle>GooseTrack</HeroTitle>
           </WrapIcon>
           <TitleUser>User Panel</TitleUser>
@@ -83,7 +80,7 @@ export const Navigation = () => {
                   active={activeBlock === 'block1' ? 'true' : undefined}
                   onClick={() => handleBlockClick('block1')}
                 >
-                  <UserIcon />
+                  {/* <UserIcon /> */}
                   <StyledLink
                     to="/contacts"
                     active={activeBlock === 'block1' ? 'true' : undefined}
@@ -98,7 +95,7 @@ export const Navigation = () => {
                   active={activeBlock === 'block2' ? 'true' : undefined}
                   onClick={() => handleBlockClick('block2')}
                 >
-                  <Calendar />
+                  {/* <Calendar /> */}
                   <StyledLink
                     to="/"
                     active={activeBlock === 'block2' ? 'true' : undefined}
@@ -111,7 +108,7 @@ export const Navigation = () => {
             </NavList>
           </Nav>
           <BtnLogout>
-            Log out <LogoutIcon />
+            Log out 
           </BtnLogout>
         </WrapAuth>
       </nav>
