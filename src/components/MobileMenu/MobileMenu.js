@@ -38,7 +38,7 @@ export const MobileMenuAppl = ({ toggleMenu }) => {
             <picture>
               <source
                 srcSet={`${goose1pxDesck} 1x`}
-                media="(min-width: 1200px)"
+                media="(min-width: 1440px)"
               />
               <source
                 srcSet={`${goose1pxTable} 1x`}
@@ -50,7 +50,7 @@ export const MobileMenuAppl = ({ toggleMenu }) => {
               />
               <source
                 srcSet={`${goose2pxDesck} 2x`}
-                media="(min-width: 1200px)"
+                media="(min-width: 1440px)"
               />
               <source
                 srcSet={`${goose2pxTable} 2x`}
@@ -71,33 +71,31 @@ export const MobileMenuAppl = ({ toggleMenu }) => {
           <Nav>
             <NavList>
               <LinkWrapper
+                active={activeBlock === 'block1' ? 'true' : undefined}
+                onClick={() => handleBlockClick('block1')}
+              >
+                <UserIcon />
+                <StyledLink
+                  to="account"
                   active={activeBlock === 'block1' ? 'true' : undefined}
                   onClick={() => handleBlockClick('block1')}
                 >
-                  <UserIcon />
-                  <StyledLink
-                    to="account"
-                    active={activeBlock === 'block1' ? 'true' : undefined}
-                    onClick={() => handleBlockClick('block1')}
-                  >
-                    My account
-                  </StyledLink>
+                  My account
+                </StyledLink>
               </LinkWrapper>
-              <li>
-                <LinkWrapper
+              <LinkWrapper
+                active={activeBlock === 'block2' ? 'true' : undefined}
+                onClick={() => handleBlockClick('block2')}
+              >
+                <Calendar />
+                <StyledLink
+                  to="calendar"
                   active={activeBlock === 'block2' ? 'true' : undefined}
                   onClick={() => handleBlockClick('block2')}
                 >
-                  <Calendar />
-                  <StyledLink
-                    to="calendar"
-                    active={activeBlock === 'block2' ? 'true' : undefined}
-                    onClick={() => handleBlockClick('block2')}
-                  >
-                    Calendar
-                  </StyledLink>
-                </LinkWrapper>
-              </li>
+                  Calendar
+                </StyledLink>
+              </LinkWrapper>
             </NavList>
           </Nav>
         </ContentWrapper>

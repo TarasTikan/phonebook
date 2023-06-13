@@ -9,6 +9,9 @@ export const MobileMenu = styled.div`
   height: 100%;
   background-color: #ffffff;
   z-index: 1;
+  @media screen and (min-width: 1440px) {
+    display: none;
+  }
 `;
 
 export const MobileContainer = styled.div`

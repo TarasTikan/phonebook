@@ -9,7 +9,7 @@ export const WrapAuth = styled.div`
   display: none;
   flex-direction: column;
   padding-bottom: 24px;
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1440px) {
     display: flex;
   }
 `;
@@ -19,7 +19,7 @@ export const BtnMenu = styled.button`
   margin-bottom: auto;
   cursor: pointer;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1440px) {
     display: none;
   }
   svg {

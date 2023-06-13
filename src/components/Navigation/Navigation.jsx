@@ -49,7 +49,7 @@ export const Navigation = () => {
             <picture>
               <source
                 srcSet={`${goose1pxDesck} 1x`}
-                media="(min-width: 1200px)"
+                media="(min-width: 1440px)"
               />
               <source
                 srcSet={`${goose1pxTable} 1x`}
@@ -61,7 +61,7 @@ export const Navigation = () => {
               />
               <source
                 srcSet={`${goose2pxDesck} 2x`}
-                media="(min-width: 1200px)"
+                media="(min-width: 1440px)"
               />
               <source
                 srcSet={`${goose2pxTable} 2x`}
