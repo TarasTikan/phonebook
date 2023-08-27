@@ -29,7 +29,7 @@ export const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmitForm}>
-      {/* <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <TextField
           helperText="Please enter your email"
           label="Email"
@@ -59,7 +59,7 @@ export const LoginForm = () => {
       </FormControl>
       <Button type="submit" variant="contained" color="success">
         Log in
-      </Button> */}
+      </Button>
     </form>
   );
 };
